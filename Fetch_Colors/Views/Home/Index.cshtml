@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@using Fetch_Colors.Models
+@model List<ColorListModel>
+
+<div class="text-center">
+    @foreach (var item in Model)
+    {
+        <h1>@item.ListHeader</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Color</th>
+                    <th>Pantone value</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var color in item.Colors)
+                {
+                    <tr>
+                        <td>@color.Id</td>
+                        <td>@color.Name</td>
+                        <td>@color.Color</td>
+                        <td>@color.PantoneValue</td>
+                        <td>@color.Year</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
